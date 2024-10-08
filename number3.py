@@ -1,6 +1,5 @@
 def find_products_not_in_stores(all_products, store_products_list):
     all_store_products = set()
-
     for store_products in store_products_list:
         all_store_products.update(store_products)
 
@@ -19,7 +18,6 @@ def input_stores_products(m):
         stores_products.append({product.strip() for product in store_products})
     return stores_products
 
-
 if __name__ == "__main__":
     all_products = input_products()
 
@@ -37,9 +35,7 @@ if __name__ == "__main__":
 
     products_not_in_stores = find_products_not_in_stores(all_products, store_products_list)
 
-    result_list = list(products_not_in_stores)
-
-    if result_list:
-        print("Продукти, яких немає в жодному магазині:", result_list)
+    if products_not_in_stores:
+        print("Продукти, яких немає в жодному магазині:", products_not_in_stores)
     else:
         print("Всі продукти є в магазинах.")
